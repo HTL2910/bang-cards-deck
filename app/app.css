@@ -13,3 +13,26 @@ body {
     color-scheme: dark;
   }
 }
+
+/* Animation lật bài khi rút */
+@keyframes flip-in {
+  from {
+    opacity: 0;
+    transform: rotateY(-75deg) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes flip-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
