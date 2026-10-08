@@ -5,3 +5,6 @@
 # React Router
 /.react-router/
 /build/
+
+# Raw card assets archive (only curated assets copied to apps are committed)
+/Bang/
