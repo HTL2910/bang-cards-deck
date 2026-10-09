@@ -32,8 +32,10 @@ export default function PlaySettingsRoute() {
   }, [query]);
 
   return (
-    <AppShell
-      title="Cài Đặt Lá Bài"
+    <>
+      <title>Cài Đặt Bộ Bài BANG!</title>
+      <AppShell
+        title="Cài Đặt Lá Bài"
       subtitle="Thay đổi chỉ áp dụng khi bắt đầu ván mới"
       actions={<Link className="bang-button play-link" to="/">Về bàn chơi</Link>}
       note="Cấu hình được lưu riêng với ván đang chơi; quay lại sẽ không xóa hoặc thay đổi các vùng bài hiện tại."
@@ -88,6 +90,7 @@ export default function PlaySettingsRoute() {
           })}
         </div>
       </div>
-    </AppShell>
+      </AppShell>
+    </>
   );
 }

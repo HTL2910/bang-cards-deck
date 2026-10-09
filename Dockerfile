@@ -1,22 +1,16 @@
-FROM node:24-alpine AS development-dependencies-env
-COPY . /app
+FROM node:24-alpine AS build
+ARG TARGET=event-deck
 WORKDIR /app
+COPY . .
 RUN npm ci
-
-FROM node:24-alpine AS production-dependencies-env
-COPY ./package.json package-lock.json /app/
-WORKDIR /app
-RUN npm ci --omit=dev
-
-FROM node:24-alpine AS build-env
-COPY . /app/
-COPY --from=development-dependencies-env /app/node_modules /app/node_modules
-WORKDIR /app
-RUN npm run build
+RUN npm run build --workspace "@bang/${TARGET}"
+RUN npm prune --omit=dev
 
 FROM node:24-alpine
-COPY ./package.json package-lock.json /app/
-COPY --from=production-dependencies-env /app/node_modules /app/node_modules
-COPY --from=build-env /app/build /app/build
+ARG TARGET=event-deck
 WORKDIR /app
-CMD ["npm", "run", "start"]
+COPY package.json package-lock.json ./
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/apps/${TARGET}/build ./build
+EXPOSE 3000
+CMD ["node", "node_modules/@react-router/serve/bin.cjs", "./build/server/index.js"]

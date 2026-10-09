@@ -15,6 +15,7 @@ describe("Character Deck route", () => {
   it("starts with an empty prompt and visible unofficial-translation note", () => {
     render(<CharacterHome />);
 
+    expect(document.title).toBe("Bộ Nhân Vật BANG!");
     expect(screen.getByRole("heading", { name: "Bộ Nhân Vật" })).toBeInTheDocument();
     expect(screen.getByText("Chưa rút nhân vật")).toBeInTheDocument();
     expect(screen.getByText(/bản dịch không chính thức/i)).toBeInTheDocument();

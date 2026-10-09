@@ -35,8 +35,10 @@ export default function CharacterHome() {
   const current = state.current;
 
   return (
-    <AppShell
-      title="Bộ Nhân Vật"
+    <>
+      <title>Bộ Nhân Vật BANG!</title>
+      <AppShell
+        title="Bộ Nhân Vật"
       subtitle="Rút và quản lý nhân vật trên thiết bị này"
       note={TRANSLATION_NOTE}
       actions={
@@ -118,6 +120,7 @@ export default function CharacterHome() {
           setConfirmingReset(false);
         }}
       />
-    </AppShell>
+      </AppShell>
+    </>
   );
 }

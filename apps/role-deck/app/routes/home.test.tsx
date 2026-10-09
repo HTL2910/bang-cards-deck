@@ -15,6 +15,7 @@ describe("Role Deck route", () => {
   it("lets the player choose a table size and explains local privacy", () => {
     render(<RoleHome />);
 
+    expect(document.title).toBe("Bộ Vai Trò BANG!");
     const playerCount = screen.getByRole("combobox", { name: "Số người chơi" });
     expect(playerCount).toHaveValue("4");
     expect(screen.getByText(/không đồng bộ với thiết bị khác/i)).toBeInTheDocument();

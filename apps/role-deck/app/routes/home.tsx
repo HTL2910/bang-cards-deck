@@ -26,8 +26,10 @@ export default function RoleHome() {
   const current = state.current;
 
   return (
-    <AppShell
-      title="Bộ Vai Trò"
+    <>
+      <title>Bộ Vai Trò BANG!</title>
+      <AppShell
+        title="Bộ Vai Trò"
       subtitle="Rút riêng trên thiết bị của bạn"
       note="Bản dịch không chính thức. Nhóm chơi tự xử lý vai trò trùng giữa các thiết bị."
     >
@@ -123,6 +125,7 @@ export default function RoleHome() {
           setConfirmingRedraw(false);
         }}
       />
-    </AppShell>
+      </AppShell>
+    </>
   );
 }

@@ -42,8 +42,10 @@ export default function PlayHome() {
     : "Tất cả loại bài đang được bật.";
 
   return (
-    <AppShell
-      title="Bộ Bài Chơi"
+    <>
+      <title>Bộ Bài Chơi BANG!</title>
+      <AppShell
+        title="Bộ Bài Chơi"
       subtitle="Quản lý bài cá nhân — luật được áp dụng thủ công"
       note="Ứng dụng không kiểm tra mục tiêu, khoảng cách, thời điểm, sát thương hay năng lực nhân vật."
       actions={<Link className="bang-button play-link" to="/settings">Cài đặt</Link>}
@@ -131,6 +133,7 @@ export default function PlayHome() {
           setConfirmingNewGame(false);
         }}
       />
-    </AppShell>
+      </AppShell>
+    </>
   );
 }

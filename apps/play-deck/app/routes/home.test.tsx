@@ -39,6 +39,7 @@ describe("Play Deck route", () => {
   it("shows zone counts and draws one or two cards", () => {
     renderHome();
 
+    expect(document.title).toBe("Bộ Bài Chơi BANG!");
     expect(screen.getByLabelText("Chồng rút: 80")).toBeInTheDocument();
     expect(screen.getByLabelText("Trên tay: 0")).toBeInTheDocument();
     expect(screen.getByLabelText("Đang dùng: 0")).toBeInTheDocument();
