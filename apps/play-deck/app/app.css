@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import "@bang/shared-ui/styles.css";
+
+:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: radial-gradient(circle at top, #143522, #0f172a 42rem); }
+button, input { font: inherit; }
+
+.play-panel, .settings-panel { display: grid; gap: 1rem; }
+.play-link { display: inline-grid; place-items: center; padding-inline: 1rem; text-decoration: none; }
+.play-toolbar { display: flex; flex-wrap: wrap; gap: 1rem; align-items: end; justify-content: space-between; }
+.play-toolbar__draw, .settings-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.play-empty-deck, .settings-warning { margin: 0; padding: 0.875rem 1rem; border: 1px solid #d97706; border-radius: var(--bang-radius-md); color: #fef3c7; background: rgb(146 64 14 / 28%); }
+.play-zone { display: grid; gap: 0.75rem; }
+.play-zone h2, .play-zone__empty { margin: 0; }
+.play-zone__empty { padding: 1rem; border: 1px dashed var(--bang-color-border); border-radius: var(--bang-radius-md); color: var(--bang-color-muted); }
+.play-zone__cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 1fr)); gap: 0.75rem; }
+.play-card { display: grid; align-content: start; gap: 0.5rem; padding: 0.75rem; border: 1px solid var(--bang-color-border); border-radius: var(--bang-radius-md); background: rgb(24 34 53 / 94%); }
+.play-card h3, .play-card p { margin: 0; }
+.play-card p { color: var(--bang-color-muted); font-size: 0.875rem; line-height: 1.45; }
+.play-new-game { width: 100%; border-color: var(--bang-color-danger); }
+.settings-search { display: grid; gap: 0.5rem; }
+.settings-search input { min-height: 44px; padding: 0.625rem 0.75rem; border: 1px solid var(--bang-color-border); border-radius: var(--bang-radius-sm); color: var(--bang-color-text); background: var(--bang-color-surface); }
+.settings-list { display: grid; gap: 0.625rem; }
+.settings-card { min-height: 56px; display: flex; gap: 0.75rem; align-items: center; padding: 0.75rem; border: 1px solid var(--bang-color-border); border-radius: var(--bang-radius-md); background: rgb(24 34 53 / 94%); cursor: pointer; }
+.settings-card input { width: 1.25rem; height: 1.25rem; accent-color: var(--bang-color-accent); }
+.settings-card span { display: grid; }
+.settings-card small { color: var(--bang-color-muted); }
+.play-error { padding: 2rem; color: white; background: #0f172a; }
