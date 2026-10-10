@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "@bang/shared-ui/styles.css";
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: radial-gradient(circle at top, #172554, #0f172a 42rem); }
+button, select { font: inherit; }
+
+.role-panel { display: grid; gap: 1rem; }
+.role-settings { display: grid; gap: 0.5rem; }
+.role-settings select {
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--bang-color-border);
+  border-radius: var(--bang-radius-sm);
+  color: var(--bang-color-text);
+  background: var(--bang-color-surface);
+}
+
+.role-private-note {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid #60a5fa;
+  color: #dbeafe;
+  background: rgb(30 58 138 / 30%);
+}
+
+.role-facedown,
+.role-card {
+  min-height: 24rem;
+  padding: 1.25rem;
+  border: 1px solid var(--bang-color-border);
+  border-radius: var(--bang-radius-lg);
+  background: rgb(24 34 53 / 94%);
+}
+
+.role-facedown {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background-image: repeating-linear-gradient(45deg, transparent 0 14px, rgb(217 119 6 / 10%) 14px 28px);
+}
+
+.role-card { display: grid; gap: 1rem; }
+.role-card__art { width: min(100%, 18rem); margin-inline: auto; }
+.role-card h2, .role-card p { margin: 0; }
+.role-card__objective { line-height: 1.6; }
+.role-actions { display: grid; gap: 0.75rem; }
+.role-actions .bang-button { width: 100%; }
+.role-actions__primary { min-height: 56px; border-color: #2563eb; background: #2563eb; font-weight: 700; }
+.role-error { padding: 2rem; color: white; background: #0f172a; }
+
+@media (min-width: 42rem) {
+  .role-card { grid-template-columns: minmax(13rem, 18rem) 1fr; align-items: start; }
+}

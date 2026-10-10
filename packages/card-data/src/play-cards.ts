@@ -1,0 +1,26 @@
+import type { PlayCardDefinition } from "./types";
+
+export const PLAY_CARDS: PlayCardDefinition[] = [
+  { id: "bang", originalName: "BANG!", nameVi: "BANG!", textVi: "Bắn một người chơi trong tầm ngắm; mục tiêu phải dùng MISSED! để tránh mất 1 máu.", image: "/cards/play/bang.png", category: "action", count: 25 },
+  { id: "missed", originalName: "MISSED!", nameVi: "TRƯỢT!", textVi: "Tránh một phát BANG! nhắm vào bạn.", image: "/cards/play/missed.png", category: "action", count: 12 },
+  { id: "beer", originalName: "Beer", nameVi: "Bia", textVi: "Hồi 1 máu, nhưng không vượt quá số máu tối đa của nhân vật.", image: "/cards/play/beer.png", category: "action", count: 6 },
+  { id: "cat-balou", originalName: "Cat Balou", nameVi: "Cat Balou", textVi: "Chọn và bỏ 1 lá của một người chơi bất kỳ.", image: "/cards/play/cat-balou.png", category: "action", count: 4 },
+  { id: "panic", originalName: "Panic!", nameVi: "Hoảng Loạn!", textVi: "Rút 1 lá từ người chơi ở khoảng cách 1.", image: "/cards/play/panic.png", category: "action", count: 4 },
+  { id: "stagecoach", originalName: "Stagecoach", nameVi: "Xe Ngựa", textVi: "Rút 2 lá bài.", image: "/cards/play/stagecoach.png", category: "action", count: 2 },
+  { id: "wells-fargo", originalName: "Wells Fargo", nameVi: "Wells Fargo", textVi: "Rút 3 lá bài.", image: "/cards/play/wells-fargo.png", category: "action", count: 1 },
+  { id: "general-store", originalName: "General Store", nameVi: "Cửa Hàng Tổng Hợp", textVi: "Lật số lá bằng số người còn sống; lần lượt mỗi người chọn 1 lá.", image: "/cards/play/general-store.png", category: "action", count: 2 },
+  { id: "indians", originalName: "Indians!", nameVi: "Người Da Đỏ!", textVi: "Mỗi người chơi khác phải bỏ 1 lá BANG! hoặc mất 1 máu.", image: "/cards/play/indians.png", category: "action", count: 2 },
+  { id: "gatling", originalName: "Gatling", nameVi: "Súng Gatling", textVi: "Mỗi người chơi khác phải dùng MISSED! hoặc mất 1 máu.", image: "/cards/play/gatling.png", category: "action", count: 1 },
+  { id: "duel", originalName: "Duel", nameVi: "Đấu Tay Đôi", textVi: "Bạn và mục tiêu lần lượt bỏ BANG!; người đầu tiên không thể bỏ sẽ mất 1 máu.", image: "/cards/play/duel.png", category: "action", count: 3 },
+  { id: "saloon", originalName: "Saloon", nameVi: "Quán Rượu", textVi: "Mỗi người chơi còn sống hồi 1 máu.", image: "/cards/play/saloon.png", category: "action", count: 1 },
+  { id: "barrel", originalName: "Barrel", nameVi: "Thùng Gỗ", textVi: "Khi bị BANG!, lật bài kiểm tra: nếu là Cơ, phát bắn trượt.", image: "/cards/play/barrel.png", category: "equipment", count: 2 },
+  { id: "dynamite", originalName: "Dynamite", nameVi: "Thuốc Nổ", textVi: "Đầu lượt, lật bài kiểm tra; từ 2 đến 9 Bích khiến bạn mất 3 máu, nếu không chuyển cho người kế tiếp.", image: "/cards/play/dynamite.png", category: "equipment", count: 1 },
+  { id: "jail", originalName: "Jail", nameVi: "Nhà Tù", textVi: "Đầu lượt, lật bài kiểm tra: nếu không phải Cơ, bỏ qua lượt. Không dùng lên Cảnh Sát Trưởng.", image: "/cards/play/jail.png", category: "equipment", count: 3 },
+  { id: "mustang", originalName: "Mustang", nameVi: "Ngựa Mustang", textVi: "Mọi người chơi khác xem khoảng cách đến bạn tăng thêm 1.", image: "/cards/play/mustang.png", category: "equipment", count: 2 },
+  { id: "scope", originalName: "Scope", nameVi: "Ống Ngắm", textVi: "Bạn xem khoảng cách đến mọi người chơi khác giảm đi 1.", image: "/cards/play/scope.png", category: "equipment", count: 1 },
+  { id: "volcanic", originalName: "Volcanic", nameVi: "Volcanic", textVi: "Tầm bắn 1; cho phép đánh bao nhiêu lá BANG! tùy ý trong lượt.", image: "/cards/play/volcanic.png", category: "weapon", count: 2 },
+  { id: "schofield", originalName: "Schofield", nameVi: "Schofield", textVi: "Vũ khí có tầm bắn 2.", image: "/cards/play/schofield.png", category: "weapon", count: 3 },
+  { id: "remington", originalName: "Remington", nameVi: "Remington", textVi: "Vũ khí có tầm bắn 3.", image: "/cards/play/remington.png", category: "weapon", count: 1 },
+  { id: "rev-carabine", originalName: "Rev. Carabine", nameVi: "Rev. Carabine", textVi: "Vũ khí có tầm bắn 4.", image: "/cards/play/rev-carabine.png", category: "weapon", count: 1 },
+  { id: "winchester", originalName: "Winchester", nameVi: "Winchester", textVi: "Vũ khí có tầm bắn 5.", image: "/cards/play/winchester.png", category: "weapon", count: 1 },
+];

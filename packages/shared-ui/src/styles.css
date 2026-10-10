@@ -1,0 +1,183 @@
+:root {
+  --bang-color-bg: #0f172a;
+  --bang-color-surface: #182235;
+  --bang-color-text: #f8fafc;
+  --bang-color-muted: #bac4d1;
+  --bang-color-accent: #d97706;
+  --bang-color-danger: #dc2626;
+  --bang-color-border: rgb(255 255 255 / 12%);
+  --bang-space-1: 0.5rem;
+  --bang-space-2: 1rem;
+  --bang-space-3: 1.5rem;
+  --bang-radius-sm: 0.5rem;
+  --bang-radius-md: 0.875rem;
+  --bang-radius-lg: 1.25rem;
+}
+
+.bang-app-shell {
+  box-sizing: border-box;
+  min-height: 100svh;
+  padding: max(var(--bang-space-2), env(safe-area-inset-top)) var(--bang-space-2)
+    max(var(--bang-space-2), env(safe-area-inset-bottom));
+  color: var(--bang-color-text);
+  background: var(--bang-color-bg);
+}
+
+.bang-app-shell > * {
+  width: min(100%, 48rem);
+  margin-inline: auto;
+}
+
+.bang-app-header {
+  display: flex;
+  gap: var(--bang-space-2);
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--bang-space-3);
+}
+
+.bang-app-header h1,
+.bang-app-header p {
+  margin: 0;
+}
+
+.bang-app-header__eyebrow {
+  color: var(--bang-color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.bang-app-header__actions,
+.bang-dialog__actions,
+.bang-counter__controls {
+  display: flex;
+  gap: var(--bang-space-1);
+  align-items: center;
+}
+
+.bang-card-artwork,
+.bang-card-fallback {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  border-radius: var(--bang-radius-lg);
+}
+
+.bang-card-artwork {
+  height: auto;
+  object-fit: contain;
+}
+
+.bang-card-fallback {
+  box-sizing: border-box;
+  padding: var(--bang-space-3);
+  border: 1px solid var(--bang-color-border);
+  background: var(--bang-color-surface);
+}
+
+.bang-touch-button,
+.bang-button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--bang-color-border);
+  border-radius: var(--bang-radius-sm);
+  color: var(--bang-color-text);
+  background: var(--bang-color-surface);
+  cursor: pointer;
+}
+
+.bang-touch-button:focus-visible,
+.bang-button:focus-visible {
+  outline: 3px solid var(--bang-color-accent);
+  outline-offset: 2px;
+}
+
+.bang-touch-button:disabled,
+.bang-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.bang-counter__label {
+  display: block;
+  margin-bottom: var(--bang-space-1);
+}
+
+.bang-counter output {
+  min-width: 3ch;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.bang-deck-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  gap: var(--bang-space-1);
+  margin: 0;
+}
+
+.bang-deck-stats > div {
+  padding: var(--bang-space-2);
+  border: 1px solid var(--bang-color-border);
+  border-radius: var(--bang-radius-md);
+  background: var(--bang-color-surface);
+}
+
+.bang-deck-stats dt {
+  color: var(--bang-color-muted);
+  font-size: 0.875rem;
+}
+
+.bang-deck-stats dd {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.bang-dialog {
+  width: min(calc(100% - 2rem), 28rem);
+  padding: var(--bang-space-3);
+  border: 1px solid var(--bang-color-border);
+  border-radius: var(--bang-radius-lg);
+  color: var(--bang-color-text);
+  background: var(--bang-color-surface);
+}
+
+.bang-dialog::backdrop {
+  background: rgb(2 6 23 / 80%);
+}
+
+.bang-dialog__actions {
+  justify-content: flex-end;
+}
+
+.bang-button {
+  padding-inline: var(--bang-space-2);
+}
+
+.bang-button--danger {
+  border-color: var(--bang-color-danger);
+  background: var(--bang-color-danger);
+}
+
+.bang-app-footer {
+  margin-top: var(--bang-space-3);
+  color: var(--bang-color-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bang-touch-button,
+  .bang-button {
+    transition: transform 160ms ease, opacity 160ms ease;
+  }
+
+  .bang-touch-button:active,
+  .bang-button:active {
+    transform: scale(0.97);
+  }
+}

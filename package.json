@@ -2,11 +2,22 @@
   "name": "bang",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "build": "react-router build",
-    "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "build": "npm run build --workspaces --if-present",
+    "dev:character": "npm run dev --workspace @bang/character-deck",
+    "dev:event": "npm run dev --workspace @bang/event-deck",
+    "dev:play": "npm run dev --workspace @bang/play-deck",
+    "dev:role": "npm run dev --workspace @bang/role-deck",
+    "start:character": "npm run start --workspace @bang/character-deck",
+    "start:event": "npm run start --workspace @bang/event-deck",
+    "start:play": "npm run start --workspace @bang/play-deck",
+    "start:role": "npm run start --workspace @bang/role-deck",
+    "test": "vitest run",
+    "typecheck": "npm run typecheck --workspaces --if-present"
   },
   "dependencies": {
     "@react-router/node": "^8.4.0",
@@ -19,11 +30,15 @@
   "devDependencies": {
     "@react-router/dev": "^8.4.0",
     "@tailwindcss/vite": "^4.2.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
     "@types/node": "^22",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
+    "jsdom": "^29.1.1",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
-    "vite": "^8.0.3"
+    "vite": "^8.0.3",
+    "vitest": "^5.0.3"
   }
 }

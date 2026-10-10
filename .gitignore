@@ -1,11 +1,14 @@
 .DS_Store
 .env
-/node_modules/
+**/node_modules/
 /.worktrees/
 
 # React Router
-/.react-router/
-/build/
+**/.react-router/
+**/build/
+
+# Tests
+/coverage/
 
 # Raw card assets archive (only curated assets copied to apps are committed)
 /Bang/
